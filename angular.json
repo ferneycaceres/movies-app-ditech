@@ -1,0 +1,176 @@
+{
+  "version": 1,
+  "projects": {
+    "movies-web-app": {
+      "projectType": "application",
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "apps/movies-web-app",
+      "sourceRoot": "apps/movies-web-app/src",
+      "prefix": "mymovies-workspace",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/movies-web-app",
+            "index": "apps/movies-web-app/src/index.html",
+            "main": "apps/movies-web-app/src/main.ts",
+            "polyfills": "apps/movies-web-app/src/polyfills.ts",
+            "tsConfig": "apps/movies-web-app/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "apps/movies-web-app/src/favicon.ico",
+              "apps/movies-web-app/src/assets"
+            ],
+            "styles": ["apps/movies-web-app/src/styles.scss"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/movies-web-app/src/environments/environment.ts",
+                  "with": "apps/movies-web-app/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "movies-web-app:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "movies-web-app:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "movies-web-app:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/movies-web-app/tsconfig.app.json",
+              "apps/movies-web-app/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!apps/movies-web-app/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "apps/movies-web-app/jest.config.js",
+            "tsConfig": "apps/movies-web-app/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "apps/movies-web-app/src/test-setup.ts"
+          }
+        }
+      }
+    },
+    "movies-web-app-e2e": {
+      "root": "apps/movies-web-app-e2e",
+      "sourceRoot": "apps/movies-web-app-e2e/src",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/movies-web-app-e2e/cypress.json",
+            "tsConfig": "apps/movies-web-app-e2e/tsconfig.e2e.json",
+            "devServerTarget": "movies-web-app:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "movies-web-app:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": ["apps/movies-web-app-e2e/tsconfig.e2e.json"],
+            "exclude": ["**/node_modules/**", "!apps/movies-web-app-e2e/**/*"]
+          }
+        }
+      }
+    }
+  },
+  "cli": {
+    "defaultCollection": "@nrwl/angular",
+    "analytics": false
+  },
+  "schematics": {
+    "@nrwl/workspace": {
+      "library": {
+        "linter": "tslint"
+      }
+    },
+    "@nrwl/cypress": {
+      "cypress-project": {
+        "linter": "tslint"
+      }
+    },
+    "@nrwl/node": {
+      "application": {
+        "linter": "tslint"
+      },
+      "library": {
+        "linter": "tslint"
+      }
+    },
+    "@nrwl/nest": {
+      "application": {
+        "linter": "tslint"
+      },
+      "library": {
+        "linter": "tslint"
+      }
+    },
+    "@nrwl/express": {
+      "application": {
+        "linter": "tslint"
+      },
+      "library": {
+        "linter": "tslint"
+      }
+    },
+    "@nrwl/angular:application": {
+      "unitTestRunner": "jest",
+      "e2eTestRunner": "cypress"
+    },
+    "@nrwl/angular:library": {
+      "unitTestRunner": "jest"
+    }
+  },
+  "defaultProject": "movies-web-app"
+}
