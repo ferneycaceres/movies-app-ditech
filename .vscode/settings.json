@@ -1,0 +1,20 @@
+{
+  "cSpell.words": ["Paginator", "component", "dynamic", "input", "omnni"],
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.formatOnSave": true,
+  "eslint.enable": false,
+  "eslint.alwaysShowStatus": true,
+  "editor.codeActionsOnSave": { "source.fixAll.eslint": true },
+  "eslint.validate": ["javascript", "typescript"],
+  "prettier.disableLanguages": ["vue"],
+  "json.format.enable": false,
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
+}

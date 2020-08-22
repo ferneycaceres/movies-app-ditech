@@ -25,7 +25,10 @@
               "apps/movies-web-app/src/favicon.ico",
               "apps/movies-web-app/src/assets"
             ],
-            "styles": ["apps/movies-web-app/src/styles.scss"],
+            "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+              "apps/movies-web-app/src/styles.scss"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -83,7 +86,10 @@
               "apps/movies-web-app/tsconfig.app.json",
               "apps/movies-web-app/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!apps/movies-web-app/**/*"]
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/movies-web-app/**/*"
+            ]
           }
         },
         "test": {
@@ -118,8 +124,13 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": ["apps/movies-web-app-e2e/tsconfig.e2e.json"],
-            "exclude": ["**/node_modules/**", "!apps/movies-web-app-e2e/**/*"]
+            "tsConfig": [
+              "apps/movies-web-app-e2e/tsconfig.e2e.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/movies-web-app-e2e/**/*"
+            ]
           }
         }
       }
