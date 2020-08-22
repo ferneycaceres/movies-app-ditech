@@ -1,8 +1,13 @@
 import { createAction, props } from '@ngrx/store';
-import { AuthEntity } from './auth.models';
+import { AuthCredentials } from '@mymovies-workspace/auth';
 
-export const loadAuth = createAction('[Auth] Load Auth');
+export const login = createAction(
+  '[Auth] Login',
+  props<{
+    credentials: AuthCredentials;
+  }>()
+);
 
-export const loadAuthSuccess = createAction('[Auth] Load Auth Success', props<{ auth: AuthEntity[] }>());
+export const loginSuccess = createAction('[Auth] Login Success', props<{ auth: any }>());
 
-export const loadAuthFailure = createAction('[Auth] Load Auth Failure', props<{ error: any }>());
+export const loginFail = createAction('[Auth] Login Fail');

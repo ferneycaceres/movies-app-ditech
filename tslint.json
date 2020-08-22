@@ -49,7 +49,7 @@
       true,
       {
         "enforceBuildableLibDependency": true,
-        "allow": ["@env/*", "@mymovies-workspace/auth"],
+        "allow": ["@env/*", "@mymovies-workspace/auth", "@mymovies-workspace/utils", "@mymovies-workspace/validators"],
         "depConstraints": [
           {
             "sourceTag": "*",

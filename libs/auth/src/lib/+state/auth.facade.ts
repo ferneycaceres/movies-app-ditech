@@ -1,19 +1,20 @@
 import { Injectable } from '@angular/core';
 
 import { select, Store, Action } from '@ngrx/store';
+import { State } from './auth.reducer';
 
-import * as fromAuth from './auth.reducer';
-import * as AuthSelectors from './auth.selectors';
+import { authQuery } from './auth.selectors';
+import { AuthCredentials } from '../models/auth';
+import * as authActions from './auth.actions';
 
 @Injectable()
 export class AuthFacade {
-  loaded$ = this.store.pipe(select(AuthSelectors.getAuthLoaded));
-  allAuth$ = this.store.pipe(select(AuthSelectors.getAllAuth));
-  selectedAuth$ = this.store.pipe(select(AuthSelectors.getSelected));
+  isAuthenticaded$ = this.store.pipe(select(authQuery.getIsAuthenticated));
+  getUserAuthenticaded$ = this.store.pipe(select(authQuery.getUserAuthenticaded));
 
-  constructor(private store: Store<fromAuth.AuthPartialState>) {}
+  constructor(private store: Store<State>) {}
 
-  dispatch(action: Action) {
-    this.store.dispatch(action);
+  login(credentials: AuthCredentials) {
+    this.store.dispatch(authActions.login({ credentials }));
   }
 }
