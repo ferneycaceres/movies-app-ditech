@@ -9,7 +9,7 @@
       "dependencies": "*",
       "devDependencies": "*"
     },
-    "tsconfig.base.json": "*",
+    "tsconfig.json": "*",
     "tslint.json": "*",
     "nx.json": "*"
   },
@@ -28,6 +28,9 @@
     "movies-web-app-e2e": {
       "tags": [],
       "implicitDependencies": ["movies-web-app"]
+    },
+    "auth": {
+      "tags": []
     }
   }
 }
