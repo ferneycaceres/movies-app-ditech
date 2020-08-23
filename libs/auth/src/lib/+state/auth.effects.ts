@@ -20,5 +20,17 @@ export class AuthEffects {
     )
   );
 
+  saveAuth$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(authActions.saveUserAuth),
+      mergeMap((action) =>
+        this.authService.saveUserAuth(action.user).pipe(
+          map(() => authActions.saveUserAuthSuccess()),
+          catchError(() => of(authActions.saveUserAuthFail()))
+        )
+      )
+    )
+  );
+
   constructor(private actions$: Actions, private authService: AuthService) {}
 }

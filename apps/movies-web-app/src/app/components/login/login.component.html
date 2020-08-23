@@ -5,6 +5,11 @@
     </mat-card-header>
 
     <form class="login-wrapper__example-form" [formGroup]="loginForm" (ngSubmit)="onSignInSubmit(loginForm.value)">
+      <mat-error *ngIf="loginFail">
+        <span>
+          Username or Password invalid
+        </span>
+      </mat-error>
       <mat-card-content>
         <mat-form-field class="login-wrapper__example-full-width">
           <input matInput placeholder="Username" formControlName="username" />

@@ -7,6 +7,8 @@ import { authQuery } from './auth.selectors';
 import { AuthCredentials } from '../models/auth';
 import * as authActions from './auth.actions';
 
+import { User } from '@mymovies-workspace/models';
+
 @Injectable()
 export class AuthFacade {
   isAuthenticaded$ = this.store.pipe(select(authQuery.getIsAuthenticated));
@@ -16,5 +18,9 @@ export class AuthFacade {
 
   login(credentials: AuthCredentials) {
     this.store.dispatch(authActions.login({ credentials }));
+  }
+
+  saveUserAuth(user: User) {
+    this.store.dispatch(authActions.saveUserAuth({ user }));
   }
 }

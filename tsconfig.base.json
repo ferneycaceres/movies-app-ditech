@@ -18,6 +18,7 @@
     "paths": {
       "@env/*": ["environments/*"],
       "@mymovies-workspace/auth": ["libs/auth/src/index.ts"],
+      "@mymovies-workspace/models": ["apps/movies-web-app/src/app/models/index.ts"],
       "@mymovies-workspace/utils": ["apps/movies-web-app/src/app/util/utils.ts"],
       "@mymovies-workspace/validators": ["apps/movies-web-app/src/app/util/validators/index.ts"]
     }

@@ -16,6 +16,7 @@ import { EffectsModule } from '@ngrx/effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 import { storeFreeze } from 'ngrx-store-freeze';
+import { AuthGuard } from './helpers/auth.guard';
 
 @NgModule({
   declarations: [AppComponent, LoginComponent],
@@ -38,7 +39,7 @@ import { storeFreeze } from 'ngrx-store-freeze';
     EffectsModule.forRoot([]),
     !environment.production ? StoreDevtoolsModule.instrument({ maxAge: 100 }) : [],
   ],
-  providers: [fakeBackendProvider],
+  providers: [fakeBackendProvider, AuthGuard],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
