@@ -1,0 +1,24 @@
+<div class="autocomplete" fxLayout="row" fxLayoutAlign="center center">
+  <div class="autocomplete__content">
+    <form class="autocomplete__content__form" [formGroup]="autocompleteForm">
+      <mat-form-field class="example-full-width">
+        <input
+          matInput
+          placeholder="{{ title }}"
+          [matAutocomplete]="auto"
+          formControlName="searchBy"
+          (keyup)="change($event.target.value)"
+        />
+      </mat-form-field>
+
+      <mat-autocomplete #auto="matAutocomplete" (optionSelected)="movieSelected(singleMovie)">
+        <mat-option *ngIf="isLoading" class="is-loading"><mat-spinner diameter="50"></mat-spinner></mat-option>
+        <ng-container *ngIf="!isLoading">
+          <mat-option *ngIf="singleMovie" [value]="singleMovie.Title">
+            <span>{{ singleMovie.Title }}</span>
+          </mat-option>
+        </ng-container>
+      </mat-autocomplete>
+    </form>
+  </div>
+</div>

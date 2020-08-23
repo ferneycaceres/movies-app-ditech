@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { SharedModule } from './modules/shared/shared.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material.module';
@@ -21,6 +21,7 @@ import { AuthGuard } from './helpers/auth.guard';
 @NgModule({
   declarations: [AppComponent, LoginComponent],
   imports: [
+    SharedModule,
     BrowserModule,
     BrowserAnimationsModule,
     HttpClientModule,

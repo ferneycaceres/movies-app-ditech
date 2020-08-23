@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { environment } from '@env/environment';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ValidateEmail } from '@mymovies-workspace/validators';
 import { AuthCredentials, AuthFacade } from '@mymovies-workspace/auth';
@@ -14,7 +13,7 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
-  loginFail: boolean;
+  showLoginError = false;
 
   constructor(private authFacade: AuthFacade, private fb: FormBuilder, private router: Router) {}
 
@@ -31,12 +30,11 @@ export class LoginComponent implements OnInit {
   onSignInSubmit(user: AuthCredentials) {
     this.authFacade.login(user);
     this.authFacade.isAuthenticaded$.pipe(take(2)).subscribe((userLoggedIn: boolean) => {
-      if (userLoggedIn) {
-        this.loginFail = false;
+      if (userLoggedIn === false) {
+        this.showLoginError = true;
+      } else {
         this.storeCurrentUser();
         this.router.navigate(['admin/movies']);
-      } else {
-        this.loginFail = true;
       }
     });
   }

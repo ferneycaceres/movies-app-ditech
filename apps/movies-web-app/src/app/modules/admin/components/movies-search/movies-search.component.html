@@ -1,0 +1,11 @@
+<div class="search-content">
+  <mymovies-workspace-nav-bar></mymovies-workspace-nav-bar>
+  <div class="search-content__box" fxLayout="row" fxLayoutAlign="center center">
+    <mymovies-workspace-search-autocomplete
+      [title]="title"
+      [filteredMovie]="moviesFacade.moviesList$ | async"
+      (searchBy)="searchBy($event)"
+      (selectMovie)="selectMovie($event)"
+    ></mymovies-workspace-search-autocomplete>
+  </div>
+</div>

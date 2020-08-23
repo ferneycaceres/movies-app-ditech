@@ -11,11 +11,9 @@ import { AuthFacade } from './+state/auth.facade';
   declarations: [],
   imports: [
     CommonModule,
-    StoreModule.forFeature(fromAuthentication.AUTH_FEATURE_KEY, fromAuthentication.reducer),
-    EffectsModule.forFeature([AuthEffects]),
     StoreModule.forFeature(fromAuth.AUTH_FEATURE_KEY, fromAuth.reducer),
     EffectsModule.forFeature([AuthEffects]),
   ],
-  providers: [AuthFacade, AuthFacade],
+  providers: [AuthFacade],
 })
 export class AuthModule {}

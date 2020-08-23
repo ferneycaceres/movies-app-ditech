@@ -52,6 +52,7 @@
         "allow": [
           "@env/*",
           "@mymovies-workspace/auth",
+          "@mymovies-workspace/movies",
           "@mymovies-workspace/utils",
           "@mymovies-workspace/validators",
           "@mymovies-workspace/models"

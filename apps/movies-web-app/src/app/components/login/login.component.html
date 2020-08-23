@@ -5,7 +5,7 @@
     </mat-card-header>
 
     <form class="login-wrapper__example-form" [formGroup]="loginForm" (ngSubmit)="onSignInSubmit(loginForm.value)">
-      <mat-error *ngIf="loginFail">
+      <mat-error *ngIf="showLoginError">
         <span>
           Username or Password invalid
         </span>
