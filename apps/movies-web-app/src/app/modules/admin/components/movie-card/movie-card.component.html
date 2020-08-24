@@ -1,0 +1,20 @@
+<div class="card-content" fxLayout="row" fxLayoutAlign="center center">
+  <mat-card class="card-content__movie">
+    <mat-card-header>
+      <div mat-card-avatar class="card-content__movie__avatar"></div>
+      <mat-card-title>{{ movieData.Title }}</mat-card-title>
+      <mat-card-subtitle>Year : {{ movieData.Year }} - Released on : ({{ movieData.Released }})</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image src="{{ movieData.Poster }}" alt="Photo of a Shiba Inu" />
+    <mat-card-content>
+      <p>
+        {{ movieData.Plot }}
+      </p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button [ngClass]="clicked ? 'clicked' : ''" mat-button (click)="addFavorites(movieData)">
+        Add to Favorites
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</div>

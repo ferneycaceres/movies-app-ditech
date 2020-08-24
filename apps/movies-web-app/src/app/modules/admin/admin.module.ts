@@ -5,9 +5,11 @@ import { MoviesSearchComponent } from './components/movies-search/movies-search.
 import { MovieDetailsComponent } from './components/movie-details/movie-details.component';
 import { SharedModule } from '../shared/shared.module';
 import { MoviesModule } from '@mymovies-workspace/movies';
+import { MovieCardComponent } from './components/movie-card/movie-card.component';
+import { MaterialModule } from '../../material.module';
 
 @NgModule({
-  declarations: [MoviesSearchComponent, MovieDetailsComponent],
-  imports: [CommonModule, AdminRoutingModule, SharedModule, MoviesModule],
+  declarations: [MoviesSearchComponent, MovieDetailsComponent, MovieCardComponent],
+  imports: [CommonModule, AdminRoutingModule, SharedModule, MoviesModule, MaterialModule],
 })
 export class AdminModule {}

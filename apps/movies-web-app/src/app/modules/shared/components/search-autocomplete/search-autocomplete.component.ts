@@ -47,6 +47,6 @@ export class SearchAutocompleteComponent implements OnInit, OnChanges {
   }
 
   movieSelected(movie: IMovie) {
-    console.log(movie);
+    this.selectMovie.emit(movie);
   }
 }

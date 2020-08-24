@@ -36,16 +36,13 @@ export class AuthService {
     return this.http.post(url, credentials);
   }
 
+  removeUserAuth() {
+    localStorage.clear();
+    return of(sessionStorage.removeItem('user'));
+  }
+
   saveUserAuth(user: User): Observable<any> {
     this.userSubject.next(user);
     return of(sessionStorage.setItem('user', JSON.stringify(user)));
   }
-
-  /*getUserAuth(): Observable<User> {
-    return of(JSON.parse(sessionStorage.getItem('user')));
-  }
-
-  removeUserAuth(): Observable<void> {
-    return of(sessionStorage.removeItem('user'));
-  }*/
 }

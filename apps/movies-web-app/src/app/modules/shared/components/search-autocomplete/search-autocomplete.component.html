@@ -12,10 +12,13 @@
       </mat-form-field>
 
       <mat-autocomplete #auto="matAutocomplete" (optionSelected)="movieSelected(singleMovie)">
-        <mat-option *ngIf="isLoading" class="is-loading"><mat-spinner diameter="50"></mat-spinner></mat-option>
+        <mat-option *ngIf="isLoading" class="is-loading"><mat-spinner diameter="10"></mat-spinner></mat-option>
         <ng-container *ngIf="!isLoading">
-          <mat-option *ngIf="singleMovie" [value]="singleMovie.Title">
+          <mat-option *ngIf="singleMovie?.Response === 'True'" [value]="singleMovie.Title">
             <span>{{ singleMovie.Title }}</span>
+          </mat-option>
+          <mat-option *ngIf="singleMovie?.Response === 'False'">
+            <span>{{ singleMovie.Error }}</span>
           </mat-option>
         </ng-container>
       </mat-autocomplete>

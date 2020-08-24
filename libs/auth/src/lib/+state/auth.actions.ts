@@ -18,3 +18,9 @@ export const saveUserAuth = createAction('[Auth] Save User Auth', props<{ user: 
 export const saveUserAuthSuccess = createAction('[Auth] Save User Auth Success');
 
 export const saveUserAuthFail = createAction('[Auth] Save User Auth Fail');
+
+export const logOutUser = createAction('[Auth] User Log Out');
+
+export const logOutUserSuccess = createAction('[Auth] Log Out Success');
+
+export const logOutUserFail = createAction('[Auth] Log Out Fail');

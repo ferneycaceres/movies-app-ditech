@@ -1,0 +1,12 @@
+.card-content {
+  padding-bottom: 5%;
+  &__movie {
+    max-width: 400px;
+  }
+  &__avatar {
+  }
+}
+
+.clicked {
+  color: red;
+}

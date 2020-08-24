@@ -20,5 +20,18 @@ export class MoviesEffects {
       )
     )
   );
+
+  addMovieToFavorites$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(moviesActions.addMovieToFavorites),
+      mergeMap((action) =>
+        this.moviesService.addMovieToFavorites(action.movie).pipe(
+          map(() => moviesActions.addMovieToFavoritesSuccess()),
+          catchError(() => of(moviesActions.addMovieToFavoritesFail()))
+        )
+      )
+    )
+  );
+
   constructor(private actions$: Actions, private moviesService: MoviesService) {}
 }

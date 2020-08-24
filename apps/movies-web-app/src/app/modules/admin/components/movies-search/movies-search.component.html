@@ -8,4 +8,12 @@
       (selectMovie)="selectMovie($event)"
     ></mymovies-workspace-search-autocomplete>
   </div>
+  <div class="search-content__cards">
+    <ng-container *ngIf="currentMovie">
+      <mymovies-workspace-movie-card
+        [currentMovie]="currentMovie"
+        (addMovieToFavorites)="addMovieToFavorites($event)"
+      ></mymovies-workspace-movie-card>
+    </ng-container>
+  </div>
 </div>

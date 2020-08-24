@@ -1,6 +1,7 @@
 .search-content {
   background-color: #e4e4e4;
-  height: 100vh;
+  height: auto;
+  min-height: 900px;
   &__box {
     margin: 5% 10% 5%;
     height: 300px;

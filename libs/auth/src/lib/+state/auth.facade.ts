@@ -20,6 +20,10 @@ export class AuthFacade {
     this.store.dispatch(authActions.login({ credentials }));
   }
 
+  logout() {
+    this.store.dispatch(authActions.logOutUser());
+  }
+
   saveUserAuth(user: User) {
     this.store.dispatch(authActions.saveUserAuth({ user }));
   }

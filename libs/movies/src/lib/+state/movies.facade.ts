@@ -23,4 +23,8 @@ export class MoviesFacade {
   movieSelected(movie: IMovie) {
     this.store.dispatch(moviesActions.movieSelected({ movie }));
   }
+
+  addToFavorites(movie: IMovie) {
+    this.store.dispatch(moviesActions.addMovieToFavorites({ movie }));
+  }
 }

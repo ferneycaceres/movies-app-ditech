@@ -20,5 +20,13 @@ export class MoviesSearchComponent implements OnInit {
 
   selectMovie(movie: IMovie) {
     this.moviesFacade.movieSelected(movie);
+    this.moviesFacade.selectedMovies$.pipe(take(2)).subscribe((movieSelected: IMovie) => {
+      if (movieSelected) {
+        this.currentMovie = movieSelected;
+      }
+    });
+  }
+  addMovieToFavorites(movie: IMovie) {
+    this.moviesFacade.addToFavorites(movie);
   }
 }
