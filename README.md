@@ -39,8 +39,8 @@
 
 ## Deployed on netlify Service
 
-- `https://festive-wiles-7fcc3b.netlify.app/`
+- [https://festive-wiles-7fcc3b.netlify.app/]
 
-## Project Instructions
+## Developed by
 
-Developed by Ferney Cáceres
+Ferney Cáceres
