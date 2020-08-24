@@ -8,6 +8,6 @@ export class User {
 }
 
 export const userRegistered: User[] = [
-  { id: '1', username: 'johndoe@doe.com', password: 'Portal1.', firstName: 'John', lastName: 'Doe' },
-  { id: '2', username: 'lauraspencer@doe.com', password: '222222', firstName: 'Laura', lastName: 'Spencer' },
+  { id: '1', username: 'johndoe@doe.com', password: 'Ditech1.', firstName: 'John', lastName: 'Doe' },
+  { id: '2', username: 'lauraspencer@doe.com', password: 'Ditech2.', firstName: 'Laura', lastName: 'Spencer' },
 ];

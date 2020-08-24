@@ -35,7 +35,12 @@
 - Start Project
   - `npm run`
 - Build Project
+
   - `npm build --prod`
+
+- You can log in with the following mock users:
+  - Username `johndoe@doe.com` pass `Ditech1.`
+  - Username `lauraspencer@doe.com` pass `Ditech2.`
 
 ## Deployed on netlify Service
 
