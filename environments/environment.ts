@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   apis: {
-    auth: 'https://localhost:4200/users/authenticate',
+    auth: 'http//localhost:4200/users/authenticate',
     movies: 'https://www.omdbapi.com/?apikey=f12ba140&',
   },
 };

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { environment } from '@env/environment';
 
 @Component({
   selector: 'mymovies-workspace-root',
@@ -7,4 +8,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'movies-web-app';
+
+  constructor() {
+    console.log(environment);
+  }
 }
